@@ -1,0 +1,421 @@
+/* --- ОСНОВНЫЕ СТИЛИ И MOBILE FIRST --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0b132b; /* Темно-синий премиальный фон */
+    color: #edf2f4;
+    line-height: 1.6;
+}
+
+/* 1. Шапка (Flexbox) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #1c2541;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #ff6b35;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #ff6b35;
+}
+
+/* Гамбургер (без JS) */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1c2541;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    border-bottom: 2px solid #3a86ff;
+}
+
+.nav a {
+    color: #edf2f4;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #ff6b35;
+}
+
+.menu-toggle:checked ~ .nav {
+    display: flex;
+}
+
+/* Главный контейнер */
+.main-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* 2. Hero-секция */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.hero-content h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.hero-content p {
+    font-size: 15px;
+    color: #8d99ae;
+    margin-bottom: 25px;
+}
+
+.hero-image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #3a86ff;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-image-box img:hover {
+    transform: scale(1.02);
+    border-color: #ff6b35;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    min-height: 44px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary {
+    background-color: #ff6b35;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #e85d26;
+    transform: translateY(-2px);
+}
+
+/* 3. Featured Categories (Сетка категорий через Grid) */
+.section-header h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.cat-card {
+    background-color: #1c2541;
+    border: 1px solid #3a86ff;
+    padding: 20px 10px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.cat-card:hover {
+    transform: translateY(-4px);
+    border-color: #ff6b35;
+}
+
+.cat-img {
+    font-size: 32px;
+}
+
+.cat-card span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #edf2f4;
+}
+
+/* 4. Promo Banners (Два широких баннера) */
+.promo-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.promo-card {
+    background-color: #1c2541;
+    border-radius: 12px;
+    padding: 25px;
+    border: 2px solid #3a86ff;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.promo-card:hover {
+    transform: scale(1.01);
+}
+
+.promo-bg-1 {
+    background: linear-gradient(135deg, #1c2541 0%, #2b2d42 100%);
+    border-left: 5px solid #ff6b35;
+}
+
+.promo-bg-2 {
+    background: linear-gradient(135deg, #1c2541 0%, #1d3557 100%);
+    border-left: 5px solid #48cae4;
+}
+
+.promo-text .tag {
+    background-color: #ff6b35;
+    color: #fff;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.promo-text h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.promo-text p {
+    font-size: 14px;
+    color: #8d99ae;
+}
+
+/* 5. Featured Products / Grid товаров (Преимуществ) */
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.prod-card {
+    background-color: #1c2541;
+    border: 1px solid #3a86ff;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.prod-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(58, 134, 255, 0.2);
+}
+
+.prod-icon {
+    font-size: 28px;
+}
+
+.prod-card h4 {
+    color: #fff;
+    font-size: 16px;
+}
+
+.prod-desc {
+    font-size: 13px;
+    color: #8d99ae;
+}
+
+.prod-footer {
+    margin-top: auto;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ff6b35;
+}
+
+/* 6. Форма обратной связи */
+.contact-section {
+    background-color: #1c2541;
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 2px solid #ff6b35;
+}
+
+.contact-section h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.contact-section p {
+    font-size: 13px;
+    color: #8d99ae;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #0b132b;
+    border: 1px solid #48cae4;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    min-height: 44px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff6b35;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Футер */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c2541;
+    color: #8d99ae;
+    font-size: 14px;
+    border-top: 1px solid #3a86ff;
+}
+
+
+/* --- ПЛАНШЕТЫ (от 768px) --- */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        border: none;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .hero {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero-content, .hero-image-box {
+        flex: 1;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(5, 1fr); /* 5 категорий в ряд */
+    }
+
+    .promo-section {
+        grid-template-columns: repeat(2, 1fr); /* 2 баннера рядом */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки карточек */
+    }
+
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+
+/* --- ДЕСКТОПЫ (от 1200px) --- */
+@media (min-width: 1200px) {
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+
+    .main-container {
+        max-width: 1140px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд как на макете товара */
+    }
+}

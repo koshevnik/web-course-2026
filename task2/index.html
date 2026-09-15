@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edme Tutors — Найди своего преподавателя</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Шапка сайта (Header как на макете) -->
+    <header class="header">
+        <div class="logo">Edme<span>Tutors</span></div>
+        
+        <!-- Гамбургер чекбокс (без JS) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- Навигация -->
+        <nav class="nav">
+            <a href="#about">О нас</a>
+            <a href="#categories">Направления</a>
+            <a href="#benefits">Условия</a>
+            <a href="#contact" class="nav-btn">Подать заявку</a>
+        </nav>
+    </header>
+
+    <!-- Основной контент (по структуре макета) -->
+    <main class="main-container">
+        
+        <!-- 2. Hero-секция (Слева текст с кнопкой, справа большая картинка) -->
+        <section class="hero" id="about">
+            <div class="hero-content">
+                <h1>Преподавай любые предметы онлайн и зарабатывай</h1>
+                <p>Ищем талантливых репетиторов по математике, языкам, физике и другим дисциплинам. Удобный график и стабильный поток учеников.</p>
+                <a href="#contact" class="btn btn-primary">Стать преподавателем</a>
+            </div>
+            <div class="hero-image-box">
+                <img src="img/img1.avif" alt="Преподаватели Edme">
+            </div>
+        </section>
+
+        <!-- 3. Featured Categories (Ряд категорий / предметов) -->
+        <section class="categories-section" id="categories">
+            <div class="section-header">
+                <h2>Популярные направления</h2>
+            </div>
+            <div class="categories-grid">
+                <div class="cat-card">
+                    <div class="cat-img">📐</div>
+                    <span>Точные науки</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-img">🌍</div>
+                    <span>Языки</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-img">📚</div>
+                    <span>Гуманитарные</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-img">💡</div>
+                    <span>Начальные классы</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-img">💻</div>
+                    <span>IT и Кодинг</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Promo Banners (Два промо-баннера со скидками/условиями рядом, как на макете) -->
+        <section class="promo-section">
+            <div class="promo-card promo-bg-1">
+                <div class="promo-text">
+                    <span class="tag">Стабильный доход</span>
+                    <h3>Заработок 700–800 BYN</h3>
+                    <p>При нагрузке всего 15 часов в неделю. Выплаты вовремя.</p>
+                </div>
+            </div>
+            <div class="promo-card promo-bg-2">
+                <div class="promo-text">
+                    <span class="tag">Гибкий график</span>
+                    <h3>Полная свобода времени</h3>
+                    <p>Самостоятельно планируйте расписание и занимайтесь из любой точки мира.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Featured Products / Grid (Сетка карточек преимуществ / условий работы) -->
+        <section class="products-section" id="benefits">
+            <div class="section-header">
+                <h2>Почему репетиторы выбирают Edme</h2>
+            </div>
+            <div class="products-grid">
+                <div class="prod-card">
+                    <div class="prod-icon">✅</div>
+                    <h4>Официальное оформление</h4>
+                    <p class="prod-desc">Полный социальный пакет и надежные гарантии.</p>
+                    <div class="prod-footer"><span>Стабильно</span></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-icon">🎯</div>
+                    <h4>Клиентская база</h4>
+                    <p class="prod-desc">Мы полностью берем на себя поиск учеников.</p>
+                    <div class="prod-footer"><span>Без стресса</span></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-icon">🤝</div>
+                    <h4>Поддержка команды</h4>
+                    <p class="prod-desc">Дружное сообщество и методологическая помощь.</p>
+                    <div class="prod-footer"><span>24/7 саппорт</span></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-icon">📈</div>
+                    <h4>Рост и развитие</h4>
+                    <p class="prod-desc">Прокачивайте свои навыки преподавания.</p>
+                    <div class="prod-footer"><span>Вебинары</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Форма обратной связи (Анкета) -->
+        <section class="contact-section" id="contact">
+            <h2>Заполни анкету преподавателя</h2>
+            <p>Мы свяжемся с тобой в течение 24 часов.</p>
+            
+            <form class="contact-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Email или Telegram для связи" required>
+                <input type="text" placeholder="Какой предмет вы преподаете?" required>
+                <textarea placeholder="Ваш опыт работы и почему хотите с нами?" required></textarea>
+                <button type="submit" class="btn btn-primary">Отправить анкету</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <p>© 2026 Edme Tutors. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
