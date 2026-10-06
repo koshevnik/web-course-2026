@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #12121e;
+  color: #f1f2f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: #1e1e30;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2e2e48;
+}
+
+h1 {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #00d2d3, #9b59b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.status-panel {
+  text-align: center;
+  min-height: 52px;
+}
+
+.level-display {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #c8d6e5;
+}
+
+.message {
+  font-size: 1rem;
+  color: #8395a7;
+}
+
+/* Игровое поле — круг из 4 оригинальных секторов */
+.board {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  grid-template-rows: repeat(2, 140px);
+  gap: 14px;
+  padding: 14px;
+  background-color: #0c0c14;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.15s ease, transform 0.1s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+/* Новые уникальные цвета секторов */
+.btn-red {
+  /* Сектор 0: Фиолетовый */
+  background-color: #9b59b6;
+  border-top-left-radius: 100%;
+}
+
+.btn-blue {
+  /* Сектор 1: Бирюзовый */
+  background-color: #00d2d3;
+  border-top-right-radius: 100%;
+}
+
+.btn-yellow {
+  /* Сектор 2: Коралловый */
+  background-color: #ff6b6b;
+  border-bottom-left-radius: 100%;
+}
+
+.btn-green {
+  /* Сектор 3: Мятный */
+  background-color: #1dd1a1;
+  border-bottom-right-radius: 100%;
+}
+
+/* Эффект подсветки при воспроизведении и нажатии (.active) */
+.btn.active {
+  opacity: 1;
+  filter: brightness(1.5);
+  box-shadow: 0 0 25px currentColor;
+}
+
+.btn:not(:disabled):active {
+  transform: scale(0.95);
+}
+
+/* Кнопка «Старт» в стиле оформления */
+.start-btn {
+  padding: 12px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1dd1a1, #10ac84);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(29, 209, 161, 0.3);
+  transition: all 0.2s ease;
+}
+
+.start-btn:hover {
+  background: linear-gradient(135deg, #10ac84, #1dd1a1);
+  box-shadow: 0 6px 20px rgba(29, 209, 161, 0.5);
+}
+
+.start-btn:active {
+  transform: scale(0.96);
+}
+
+.start-btn:disabled {
+  background: #34344e;
+  color: #576574;
+  box-shadow: none;
+  cursor: not-allowed;
+}
