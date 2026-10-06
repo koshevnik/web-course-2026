@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Быки и коровы</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="game">
+        <h1>🐂 Быки и коровы 🐄</h1>
+
+        <section class="rules">
+            <h2>Правила игры</h2>
+            <p>Компьютер загадывает число из 4 неповторяющихся цифр.</p>
+            <p>Ваша задача — угадать это число за минимальное количество попыток.</p>
+            <ul>
+                <li><strong>Бык</strong> — цифра угадана и находится на правильном месте.</li>
+                <li><strong>Корова</strong> — цифра есть в загаданном числе, но находится на другом месте.</li>
+                <li>В числе должно быть ровно 4 разные цифры.</li>
+                <li>После каждой попытки показывается количество быков и коров.</li>
+            </ul>
+        </section>
+
+        <section id="gamePanel" class="panel">
+            <div class="controls">
+                <input
+                    id="guessInput"
+                    type="text"
+                    inputmode="numeric"
+                    maxlength="4"
+                    placeholder="1234"
+                    autocomplete="off"
+                    aria-label="Ваше предположение"
+                >
+                <button id="checkButton" type="button">Проверить</button>
+                <button id="newGameButton" type="button" class="secondary">Новая игра</button>
+            </div>
+
+            <p id="errorMessage" class="message error" aria-live="polite"></p>
+            <p id="resultMessage" class="message success" aria-live="polite"></p>
+        </section>
+
+        <section class="stats">
+            <div class="stat">
+                <span class="stat-label">Попыток</span>
+                <strong id="attemptsCount">0</strong>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <h2>История попыток</h2>
+            <ul id="historyList"></ul>
+            <p id="emptyHistory" class="empty">Попыток пока нет.</p>
+        </section>
+    </main>
+</body>
+</html>
