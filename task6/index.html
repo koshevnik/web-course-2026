@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Змейка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <h1 class="game__title">Змейка</h1>
+    <p class="game__score">Счёт: <span id="score">0</span></p>
+
+    <div class="game__field">
+      <canvas id="canvas" width="400" height="400"></canvas>
+
+      <div id="game-over" class="overlay overlay--hidden">
+        <p class="overlay__title">Игра окончена</p>
+        <p class="overlay__text">Итоговый счёт: <span id="final-score">0</span></p>
+        <button id="restart" class="overlay__button" type="button">Начать заново</button>
+      </div>
+    </div>
+
+    <p class="game__hint">Управление: стрелки на клавиатуре</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
